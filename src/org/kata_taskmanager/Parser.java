@@ -2,12 +2,13 @@ package org.kata_taskmanager;
 
 public class Parser {
 
-    public static Action parseUserInput(String userInput){
+    public static Action parseUserInput(String userInput) throws InvalidUserInputException{
 
         return switch (userInput) {
             case "+ description" -> Action.ADD_TASK;
             case "- 1" -> Action.REMOVE_TASK;
-            default -> Action.EXIT;
+            case "q" -> Action.EXIT;
+            default -> throw new InvalidUserInputException(userInput);
         };
     }
 

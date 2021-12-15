@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class Test_TaskManager {
 
     @Test
-    public void test_parseUserInput_ADD_TASK() {
+    public void test_parseUserInput_ADD_TASK() throws InvalidUserInputException {
         // Arrange
         String actionUserInput = "+ description";
 
@@ -17,7 +17,7 @@ public class Test_TaskManager {
     }
 
     @Test
-    public void test_parseUserInput_REMOVE_TASK() {
+    public void test_parseUserInput_REMOVE_TASK() throws InvalidUserInputException {
         // Arrange
         String actionUserInput = "- 1";
 
@@ -26,6 +26,18 @@ public class Test_TaskManager {
 
         // Assert
         assert action == Action.REMOVE_TASK;
+    }
+
+    @Test
+    public void test_parseUserInput_EXIT() throws InvalidUserInputException {
+        // Arrange
+        String actionUserInput = "q";
+
+        // Act
+        Action action = Parser.parseUserInput(actionUserInput);
+
+        // Assert
+        assert action == Action.EXIT;
     }
 
 }
