@@ -1,7 +1,5 @@
 package org.kata_taskmanager;
 
-import java.lang.reflect.Array;
-
 public class Parser {
 
     public static ActionString parseUserInput(String userInput) throws InvalidUserInputException{

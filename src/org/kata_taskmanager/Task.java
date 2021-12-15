@@ -33,4 +33,10 @@ public class Task {
     public void taskTodo() {
         status = false;
     }
+
+    @Override
+    public String toString() {
+        String doneString = this.status ? " [x] " : " [ ] ";
+        return this.id + doneString + this.description;
+    }
 }
