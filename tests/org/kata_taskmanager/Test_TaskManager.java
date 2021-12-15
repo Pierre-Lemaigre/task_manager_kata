@@ -2,6 +2,9 @@ package org.kata_taskmanager;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class Test_TaskManager {
 
     @Test
@@ -63,5 +66,20 @@ public class Test_TaskManager {
         // Assert
         assert action == Action.EXIT;
     }
+
+    @Test
+    public void test_parseUserInput_InvalidUserInputException() {
+        // Arrange
+        String actionUserInput = "u";
+        String expectedMessage = actionUserInput + " is not a valid user input";
+
+        // Act
+        Exception exception = assertThrows(InvalidUserInputException.class, () -> Parser.parseUserInput(actionUserInput));
+        String actualMessage = exception.getMessage();
+
+        // Assert
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 
 }
