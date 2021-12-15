@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Test_TaskManager {
+public class Test_Parser {
 
     @Test
     public void test_parseUserInput_ADD_TASK() throws InvalidUserInputException {

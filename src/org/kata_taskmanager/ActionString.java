@@ -2,8 +2,8 @@ package org.kata_taskmanager;
 
 public class ActionString {
 
-    private Action action;
-    private String string;
+    private final Action action;
+    private final String string;
 
     public ActionString(Action action, String string) {
         this.action = action;
