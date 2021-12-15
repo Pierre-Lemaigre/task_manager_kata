@@ -29,7 +29,7 @@ public class Test_TaskManager {
     }
 
     @Test
-    public void test_parseUserInput_DISPLAY_TASK() throws InvalidUserInputException {
+    public void test_parseUserInput_MARK_AS_DONE() throws InvalidUserInputException {
         // Arrange
         String actionUserInput = "x 1";
 
@@ -37,11 +37,11 @@ public class Test_TaskManager {
         Action action = Parser.parseUserInput(actionUserInput);
 
         // Assert
-        assert action == Action.DISPLAY_TASK;
+        assert action == Action.MARK_AS_DONE;
     }
 
     @Test
-    public void test_parseUserInput_MARK_AS_DONE() throws InvalidUserInputException {
+    public void test_parseUserInput_MARK_AS_TODO() throws InvalidUserInputException {
         // Arrange
         String actionUserInput = "o 1";
 
@@ -49,7 +49,7 @@ public class Test_TaskManager {
         Action action = Parser.parseUserInput(actionUserInput);
 
         // Assert
-        assert action == Action.MARK_AS_DONE;
+        assert action == Action.MARK_AS_TODO;
     }
 
     @Test
