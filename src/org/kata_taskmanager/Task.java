@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Task {
     private static final AtomicInteger nextId = new AtomicInteger(0);
-    private int id;
-    private String description;
+    private final int id;
+    private final String description;
     private boolean status;
 
     Task(String description) {
@@ -16,5 +16,21 @@ public class Task {
 
     public int getId() {
         return this.id;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean getStatus() {
+        return this.status;
+    }
+
+    public void taskDone() {
+        status = true;
+    }
+
+    public void taskTodo() {
+        status = false;
     }
 }
