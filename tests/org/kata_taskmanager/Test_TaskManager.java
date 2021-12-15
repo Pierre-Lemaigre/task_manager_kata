@@ -41,6 +41,18 @@ public class Test_TaskManager {
     }
 
     @Test
+    public void test_parseUserInput_MARK_AS_DONE() throws InvalidUserInputException {
+        // Arrange
+        String actionUserInput = "o 1";
+
+        // Act
+        Action action = Parser.parseUserInput(actionUserInput);
+
+        // Assert
+        assert action == Action.MARK_AS_DONE;
+    }
+
+    @Test
     public void test_parseUserInput_EXIT() throws InvalidUserInputException {
         // Arrange
         String actionUserInput = "q";

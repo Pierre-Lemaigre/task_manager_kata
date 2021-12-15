@@ -8,6 +8,7 @@ public class Parser {
             case "+ description" -> Action.ADD_TASK;
             case "- 1" -> Action.REMOVE_TASK;
             case "x 1" -> Action.DISPLAY_TASK;
+            case "o 1" -> Action.MARK_AS_DONE;
             case "q" -> Action.EXIT;
             default -> throw new InvalidUserInputException(userInput);
         };
