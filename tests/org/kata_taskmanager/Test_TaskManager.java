@@ -13,7 +13,7 @@ public class Test_TaskManager {
         String actionUserInput = "+ description";
 
         // Act
-        Action action = Parser.parseUserInput(actionUserInput);
+        Action action = Parser.parseUserInput(actionUserInput).getAction();
 
         // Assert
         assert action == Action.ADD_TASK;
@@ -25,7 +25,7 @@ public class Test_TaskManager {
         String actionUserInput = "- 1";
 
         // Act
-        Action action = Parser.parseUserInput(actionUserInput);
+        Action action = Parser.parseUserInput(actionUserInput).getAction();
 
         // Assert
         assert action == Action.REMOVE_TASK;
@@ -37,7 +37,7 @@ public class Test_TaskManager {
         String actionUserInput = "x 1";
 
         // Act
-        Action action = Parser.parseUserInput(actionUserInput);
+        Action action = Parser.parseUserInput(actionUserInput).getAction();
 
         // Assert
         assert action == Action.MARK_AS_DONE;
@@ -49,7 +49,7 @@ public class Test_TaskManager {
         String actionUserInput = "o 1";
 
         // Act
-        Action action = Parser.parseUserInput(actionUserInput);
+        Action action = Parser.parseUserInput(actionUserInput).getAction();
 
         // Assert
         assert action == Action.MARK_AS_TODO;
@@ -61,7 +61,7 @@ public class Test_TaskManager {
         String actionUserInput = "q";
 
         // Act
-        Action action = Parser.parseUserInput(actionUserInput);
+        Action action = Parser.parseUserInput(actionUserInput).getAction();
 
         // Assert
         assert action == Action.EXIT;

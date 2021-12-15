@@ -1,12 +1,14 @@
 package org.kata_taskmanager;
 
+import java.lang.reflect.Array;
+
 public class Parser {
 
-    public static Action parseUserInput(String userInput) throws InvalidUserInputException{
+    public static ActionString parseUserInput(String userInput) throws InvalidUserInputException{
 
         String[] userInputSplited = userInput.split(" ");
 
-        return switch (userInputSplited[0]) {
+         Action action = switch (userInputSplited[0]) {
             case "+" -> Action.ADD_TASK;
             case "-" -> Action.REMOVE_TASK;
             case "x" -> Action.MARK_AS_DONE;
@@ -14,6 +16,8 @@ public class Parser {
             case "q" -> Action.EXIT;
             default -> throw new InvalidUserInputException(userInput);
         };
+
+        return new ActionString(action, userInputSplited.length > 1 ? userInputSplited[1] : null);
     }
 
 }
